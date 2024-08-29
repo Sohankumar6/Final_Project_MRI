@@ -23,7 +23,7 @@ The goal is to as follows
 To run this project, you need the following libraries installed google-colab, tensorflow, keras, numpy, pandas, matplotlib, seaborn, PIL, scikit-learn, joblib 
 
 **Project structure**
- brain_tumor_classification.ipynb  : Main Jupyter Notebook containing the project code
+ brain_tumor_classification.ipynb  :Google Colab file of my project code
  models/
     cnn_model.keras               : Saved CNN model
     cnn_vgg16_model.keras         : Saved VGG-16 model
@@ -35,48 +35,16 @@ To run this project, you need the following libraries installed google-colab, te
  ImagePrediction                  : Directory containing new images for prediction
  README.md                         : This README file
 
-**Mount Google Drive**
-from google.colab import drive
-drive.mount('/content/drive')   this code is to mount my google drive to access dataset.
-
-**Difining Paths**
-directory_path = '/content/drive/MyDrive/Final project'
-testing_path = directory_path + '/Testing'
-training_path = directory_path + '/Training'  setting the base directory path.
-
-**Loading and Preprocessing Data**
-training_count, training_image_paths, training_labels = load_images(training_path)
-testing_count, testing_image_paths, testing_labels = load_images(testing_path)  Using the load_images function to load the images, and preprocess them for model training
-
-**Model Training**
-cnn_history = cnn_model.fit(
-    train_data_preprocessed,
-    epochs=epoch,
-    validation_data=test_data_preprocessed,
-    callbacks=[model_lr_reduction, model_checkpoint, lr_scheduler],
-    verbose=True
-) this is a training a CNN model code, similarly CNN-VGG-16, KNN, Random Forest models are trained.
-
-**Evaluating Models**
-training_loss, training_accuracy = cnn_model.evaluate(train_data_preprocessed)
-print(f"Training accuracy: {training_accuracy*100:.4f}%") After training, evaluating the models on the test set
-
-**Predictions**
-display_sample_predictions(cnn_model, prediction_dir, inv_class_namings, figsize=(13, 12)) Predicting using trained models
-
-**Visualize Results**
-display_confusion_matrix(true_label_list,
-                      predicted_label_list,
-                      class_namings,
-                      metrics=True)  Visualize the performance of the models using confusion matrices and learning curves
-
 **Results**
 The models achieve varying degrees of accuracy, with deep learning models like CNN and VGG-16 generally outperforming traditional machine learning algorithms like KNN and Random Forest in terms of accuracy and precision.
+![Screenshot 2024-08-29 150249](https://github.com/user-attachments/assets/d739c436-5ee6-4907-bde7-7b70ae659b03)
+![Screenshot 2024-08-29 150321](https://github.com/user-attachments/assets/ae2a8b0a-4e26-47b3-8af8-2877f0a409ff)
 
-**Future Work**
-	Gathering more extensive and varied datasets to enhance model performance and generalization on unseen data.
-	Investigating cutting-edge methods of data augmentation, like the generation of synthetic data using Generative Adversarial Networks (GANs).
-	Utilizing transfer learning with architectures such as ResNet, EfficientNet, or Vision Transformers that goes beyond VGG-16.
- 	Enhancing classification accuracy by combining CNNs with additional machine learning methods for decision-level fusion.
-	Enhancing generalization and lowering variance by combining several models through ensemble learning techniques.
+
+**License**
+The dataset is available on Kaggle and it is a open source.
+
+**Acknowledgement**
+Thanks to Alyssa Drake for her guidance throughout the project.
+
 
