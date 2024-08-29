@@ -1,5 +1,5 @@
 # Final_Project_MRI
-Advanced Deep Learning for Automated Brain Tumor Detection and Classification via MRI Images
+**Advanced Deep Learning for Automated Brain Tumor Detection and Classification via MRI Images**
 
 This project aims to classify brain tumors from MRI images using various machine learning and deep learning models. The models implemented in this project include:
   Convolutional Neural Networks (CNN)
